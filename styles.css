@@ -520,9 +520,33 @@ svg {
   background: var(--paper);
 }
 
+.impact-label {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  padding: 0 42px;
+  border-right: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.impact-label h2 {
+  margin: 0;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.impact-label span {
+  margin-right: 0.8em;
+  color: var(--red);
+}
+
 .impact-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line);
 }
 
 .impact-item {
@@ -1636,6 +1660,11 @@ svg {
   .impact-item {
     grid-template-columns: 100px 1fr;
     padding: 25px 22px;
+  }
+
+  .impact-label {
+    min-height: 44px;
+    padding: 0 22px;
   }
 
   .impact-item strong {
