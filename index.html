@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Portfolio of Hsing-Yu (Winnie) Wen — Data AI Engineer building reliable AI systems, data products, and business intelligence solutions."
+      content="Portfolio of Hsing-Yu (Winnie) Wen — Data AI Engineer building RAG systems, data platforms, and analytics that move the business."
     />
     <meta name="theme-color" content="#f7e4b5" />
     <meta property="og:title" content="Hsing-Yu Wen — Data AI Engineer" />
@@ -17,6 +17,9 @@
     <title>Hsing-Yu Wen — Data AI Engineer</title>
     <link rel="icon" href="./assets/favicon-winnie.png?v=6" type="image/png" />
     <link rel="stylesheet" href="./styles.css" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -26,6 +29,7 @@
         "jobTitle": "Data AI Engineer",
         "email": "mailto:hsingyuw8999@gmail.com",
         "url": "https://www.linkedin.com/in/hsing-yu-wen/",
+        "sameAs": ["https://github.com/Winnie961055", "https://www.linkedin.com/in/hsing-yu-wen/"],
         "alumniOf": [
           { "@type": "CollegeOrUniversity", "name": "Carnegie Mellon University" },
           { "@type": "CollegeOrUniversity", "name": "Soochow University" }
@@ -35,6 +39,22 @@
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Intro loader (only shown when JS runs) -->
+    <div class="loader" aria-hidden="true" data-loader>
+      <div class="loader-inner">
+        <span class="loader-mark">HY</span>
+        <div class="loader-meta">
+          <span class="loader-label">Loading the system</span>
+          <span class="loader-count" data-loader-count>00</span>
+        </div>
+        <div class="loader-bar"><span data-loader-bar></span></div>
+      </div>
+    </div>
+
+    <div class="scroll-progress" aria-hidden="true"><span data-progress></span></div>
+    <div class="cursor-dot" aria-hidden="true" data-cursor-dot></div>
+    <div class="cursor-ring" aria-hidden="true" data-cursor-ring><span data-cursor-label></span></div>
 
     <header class="site-header" data-header>
       <div class="nav-shell">
@@ -60,36 +80,38 @@
           <a href="#experience">Experience</a>
           <a href="#work">Selected work</a>
           <a href="#education">Education</a>
-          <a class="nav-cta" href="#contact">Let’s talk</a>
+          <a class="nav-cta" href="#contact" data-magnetic>Let’s talk</a>
         </nav>
       </div>
     </header>
 
     <main id="main">
       <section class="hero" id="top" aria-labelledby="hero-title">
+        <canvas class="hero-canvas" aria-hidden="true" data-hero-canvas></canvas>
+
         <div class="hero-grid page-shell">
-          <div class="hero-copy reveal">
-            <p class="eyebrow"><span></span> Data AI Engineer · Analytics Builder</p>
-            <h1 id="hero-title">
+          <div class="hero-copy">
+            <p class="eyebrow hero-in" style="--d: 0">
+              <span class="eyebrow-line"></span>
+              <span class="eyebrow-static">Currently</span>
+              <span class="role-rotator" data-roles="Data AI Engineer|ML Engineer|Data Scientist|Data Engineer|Analytics Builder">Data AI Engineer</span>
+            </p>
+            <h1 id="hero-title" data-split>
               I build AI systems<br />
               <em>people can actually use.</em>
             </h1>
-            <p class="hero-intro">
-              I’m Hsing-Yu (Winnie) Wen. I turn complex enterprise data into reliable AI
-              products, intelligent retrieval systems, and decisions that move the business.
+            <p class="hero-intro hero-in" style="--d: 6">
+              I’m Hsing-Yu (Winnie) Wen, a CMU MISM candidate. I turn complex enterprise data
+              into retrieval systems, ML pipelines, and decisions that move the business.
             </p>
-            <div class="hero-actions">
-              <a class="button button-primary" href="#work">
+            <div class="hero-actions hero-in" style="--d: 7">
+              <a class="button button-primary" href="#work" data-magnetic>
                 Explore my work
                 <svg aria-hidden="true" viewBox="0 0 20 20">
                   <path d="M4 10h11M11 5l5 5-5 5" />
                 </svg>
               </a>
-              <a
-                class="button button-text"
-                href="./assets/resume-hsing-yu-wen.pdf"
-                download
-              >
+              <a class="button button-text" href="./assets/resume-hsing-yu-wen.pdf" download data-magnetic>
                 Download résumé
                 <svg aria-hidden="true" viewBox="0 0 20 20">
                   <path d="M10 3v10m-4-4 4 4 4-4M4 17h12" />
@@ -99,58 +121,57 @@
           </div>
 
           <div
-            class="hero-visual reveal"
+            class="hero-visual hero-in"
+            style="--d: 4"
             aria-label="Portrait of Hsing-Yu Wen within a diagram showing her path from business to data, AI, and impact"
+            data-tilt-scene
           >
-            <div class="visual-frame">
+            <div class="visual-frame" data-tilt-target>
               <div class="frame-topline">
                 <span>Intelligence system</span>
-                <span>01 / 04</span>
+                <span class="frame-live"><i></i> Live · <span data-step>01</span> / 04</span>
               </div>
 
               <div class="system-map" aria-hidden="true">
-                <div class="orbit orbit-one"></div>
-                <div class="orbit orbit-two"></div>
+                <div class="orbit orbit-one"><i></i></div>
+                <div class="orbit orbit-two"><i></i><i></i></div>
                 <div class="system-core">
-                  <img
-                    src="./assets/hsing-yu-wen-headshot.jpg"
-                    alt=""
-                    width="653"
-                    height="900"
-                  />
+                  <img src="./assets/hsing-yu-wen-headshot.jpg" alt="" width="653" height="900" />
                 </div>
-                <div class="system-node node-business">
+                <div class="system-node node-business" data-node="1">
                   <span>01</span>
                   <strong>BUSINESS</strong>
                 </div>
-                <div class="system-node node-data">
+                <div class="system-node node-data" data-node="2">
                   <span>02</span>
                   <strong>DATA</strong>
                 </div>
-                <div class="system-node node-ai">
+                <div class="system-node node-ai" data-node="3">
                   <span>03</span>
                   <strong>AI</strong>
                 </div>
-                <div class="system-node node-impact">
+                <div class="system-node node-impact" data-node="4">
                   <span>04</span>
                   <strong>IMPACT</strong>
                 </div>
                 <svg class="connector-map" viewBox="0 0 500 390" preserveAspectRatio="none">
                   <defs>
-                    <marker
-                      id="flow-arrow"
-                      markerWidth="7"
-                      markerHeight="7"
-                      refX="6"
-                      refY="3.5"
-                      orient="auto"
-                    >
+                    <marker id="flow-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
                       <path class="flow-arrow" d="M0 0 7 3.5 0 7Z" />
                     </marker>
                   </defs>
-                  <path d="M150 88C210 55 290 55 350 88" marker-end="url(#flow-arrow)" />
-                  <path d="M395 110C355 170 145 220 105 285" marker-end="url(#flow-arrow)" />
-                  <path d="M150 315C210 345 290 345 350 315" marker-end="url(#flow-arrow)" />
+                  <path id="flow-1" d="M150 88C210 55 290 55 350 88" marker-end="url(#flow-arrow)" />
+                  <path id="flow-2" d="M395 110C355 170 145 220 105 285" marker-end="url(#flow-arrow)" />
+                  <path id="flow-3" d="M150 315C210 345 290 345 350 315" marker-end="url(#flow-arrow)" />
+                  <circle class="packet" r="4">
+                    <animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#flow-1" /></animateMotion>
+                  </circle>
+                  <circle class="packet" r="4">
+                    <animateMotion dur="2.4s" begin="0.8s" repeatCount="indefinite"><mpath href="#flow-2" /></animateMotion>
+                  </circle>
+                  <circle class="packet" r="4">
+                    <animateMotion dur="2.4s" begin="1.6s" repeatCount="indefinite"><mpath href="#flow-3" /></animateMotion>
+                  </circle>
                 </svg>
               </div>
 
@@ -162,22 +183,30 @@
           </div>
         </div>
 
+        <div class="scroll-cue hero-in" style="--d: 9" aria-hidden="true">
+          <span>Scroll</span><i></i>
+        </div>
+
         <div class="impact-strip" aria-labelledby="impact-title">
           <div class="impact-label page-shell reveal">
             <h2 id="impact-title"><span>Impact</span> at a glance</h2>
           </div>
           <div class="page-shell impact-grid">
             <div class="impact-item reveal">
-              <strong>5,000+</strong>
-              <span>Power BI reports indexed for enterprise AI</span>
+              <strong data-count="10000" data-suffix="+">10,000+</strong>
+              <span>Power BI reports indexed for enterprise RAG at TSMC</span>
             </div>
-            <div class="impact-item reveal">
-              <strong>1,200</strong>
-              <span>Hours of manual documentation saved</span>
+            <div class="impact-item reveal" style="--rd: 1">
+              <strong data-count="90" data-suffix="%">90%</strong>
+              <span>HitRate@5 with hybrid semantic + keyword retrieval</span>
             </div>
-            <div class="impact-item reveal">
-              <strong>25%</strong>
-              <span>Increase in marketing ROI through uplift modeling</span>
+            <div class="impact-item reveal" style="--rd: 2">
+              <strong data-count="1200" data-suffix="+">1,200+</strong>
+              <span>Hours of manual documentation saved by an LLM pipeline</span>
+            </div>
+            <div class="impact-item reveal" style="--rd: 3">
+              <strong data-count="25" data-suffix="%">25%</strong>
+              <span>Lift in marketing ROI through uplift modeling</span>
             </div>
           </div>
         </div>
@@ -187,20 +216,23 @@
         <div class="page-shell">
           <div class="section-heading reveal">
             <p class="section-index">01 · About</p>
-            <h2 id="about-title">Engineering depth.<br /><em>Business instinct.</em></h2>
+            <h2 id="about-title" class="mask-heading">
+              <span class="mask-line"><span>Engineering depth.</span></span>
+              <span class="mask-line"><span><em>Business instinct.</em></span></span>
+            </h2>
           </div>
 
           <div class="about-grid">
             <div class="about-statement reveal">
               <p class="lead">
                 I work at the intersection of AI engineering, data platforms, and business
-                intelligence—where technical choices need to survive real users, real data,
-                and real constraints.
+                intelligence—where technical choices need to survive real users, real data, and
+                real constraints.
               </p>
               <p>
-                My background spans semiconductor, banking, and technology. Across each role,
-                I’ve focused on the same challenge: translating ambiguity into systems that are
-                measurable, trustworthy, and easy to act on.
+                My background spans semiconductors, banking, consumer tech, and logistics. Across
+                each role I’ve focused on the same challenge: translating ambiguity into systems
+                that are measurable, trustworthy, and easy to act on.
               </p>
               <a class="inline-link" href="mailto:hsingyuw8999@gmail.com">
                 Start a conversation
@@ -213,39 +245,50 @@
                 <span class="capability-number">01</span>
                 <div>
                   <h3>AI systems</h3>
-                  <p>RAG, LLM applications, semantic retrieval, model evaluation, and guardrails.</p>
+                  <p>
+                    RAG, hybrid semantic + keyword retrieval, Model Context Protocol services,
+                    LangChain / LangGraph agents, and LLM evaluation.
+                  </p>
                 </div>
               </article>
-              <article class="capability-card reveal">
+              <article class="capability-card reveal" style="--rd: 1">
                 <span class="capability-number">02</span>
                 <div>
-                  <h3>Data platforms</h3>
-                  <p>Streaming pipelines, data quality, cloud infrastructure, APIs, and MLOps.</p>
+                  <h3>ML &amp; data platforms</h3>
+                  <p>
+                    Kafka streaming, Spark at scale, containerized model serving, data quality,
+                    monitoring, and drift detection.
+                  </p>
                 </div>
               </article>
-              <article class="capability-card reveal">
+              <article class="capability-card reveal" style="--rd: 2">
                 <span class="capability-number">03</span>
                 <div>
                   <h3>Decision intelligence</h3>
-                  <p>Experimentation, predictive modeling, Tableau, Power BI, and executive insights.</p>
+                  <p>
+                    Uplift modeling, A/B testing, forecasting, Tableau and Power BI products, and
+                    insights leadership can act on.
+                  </p>
                 </div>
               </article>
             </div>
           </div>
+        </div>
 
-          <div class="toolbelt reveal" aria-label="Technical skills">
-            <span>Python</span>
-            <span>SQL</span>
-            <span>R</span>
-            <span>Tableau</span>
-            <span>Power BI</span>
-            <span>AWS</span>
-            <span>Kafka</span>
-            <span>Docker</span>
-            <span>PyTorch</span>
-            <span>TensorFlow</span>
-            <span>Airflow</span>
-            <span>Databricks</span>
+        <div class="marquee" aria-label="Technical skills">
+          <div class="marquee-row">
+            <div class="marquee-track">
+              <span>Python</span><span>SQL</span><span>R</span><span>Scala</span><span>Java</span>
+              <span>PyTorch</span><span>TensorFlow</span><span>scikit-learn</span><span>LangChain</span>
+              <span>LangGraph</span><span>RAG</span><span>MCP</span><span>Vector DBs</span>
+            </div>
+          </div>
+          <div class="marquee-row marquee-row-reverse">
+            <div class="marquee-track">
+              <span>Spark</span><span>Kafka</span><span>Airflow</span><span>Docker</span>
+              <span>Kubernetes</span><span>Terraform</span><span>AWS</span><span>Databricks</span>
+              <span>Power BI</span><span>Tableau</span><span>MongoDB</span><span>Git</span>
+            </div>
           </div>
         </div>
       </section>
@@ -255,12 +298,16 @@
           <div class="section-heading section-heading-row reveal">
             <div>
               <p class="section-index">02 · Experience</p>
-              <h2 id="experience-title">Built in the real world.</h2>
+              <h2 id="experience-title" class="mask-heading">
+                <span class="mask-line"><span>Built in the real world.</span></span>
+              </h2>
             </div>
             <p class="section-note">AI engineering · Analytics · Product impact</p>
           </div>
 
-          <div class="timeline">
+          <div class="timeline" data-timeline>
+            <div class="timeline-rail" aria-hidden="true"><span data-timeline-fill></span></div>
+
             <article class="timeline-item reveal">
               <div class="timeline-meta">
                 <span class="timeline-year">May–Aug 2026</span>
@@ -271,19 +318,21 @@
                   <img src="./assets/tsmc-logo.svg" alt="" width="500" height="126" />
                 </span>
                 <div>
-                  <h3>Data AI Engineer</h3>
+                  <h3>Data AI Engineer Intern</h3>
                   <p>TSMC</p>
                 </div>
               </div>
               <div class="timeline-detail">
                 <p>
-                  Built an enterprise AI knowledge platform that made thousands of Power BI
-                  reports searchable and useful to downstream AI workflows.
+                  Engineered an enterprise AI knowledge platform indexing 10,000+ Power BI
+                  reports, combining semantic and keyword retrieval for natural-language
+                  analytics—plus an MCP service that routes questions to the right report and
+                  dataset for source-aware DAX generation.
                 </p>
                 <ul>
-                  <li>MariaDB + Qdrant semantic architecture</li>
-                  <li>LLM knowledge-generation pipeline</li>
-                  <li>Natural language to SQL / DAX retrieval</li>
+                  <li>90% HitRate@5 hybrid retrieval</li>
+                  <li>1,200+ hours saved via LLM metadata pipeline</li>
+                  <li>MCP service for NL → DAX</li>
                 </ul>
               </div>
             </article>
@@ -304,13 +353,14 @@
               </div>
               <div class="timeline-detail">
                 <p>
-                  Turned customer and operational data into enterprise dashboards, marketing
-                  models, and a flagship omnichannel growth program.
+                  Optimized customer targeting with uplift modeling and A/B testing, delivered
+                  analytics products across digital banking, and led analysis for the 2025
+                  flagship online-to-offline initiative.
                 </p>
                 <ul>
-                  <li>20+ enterprise interactive dashboards</li>
-                  <li>47% faster decision workflows</li>
-                  <li>NT$5–10M in monthly transactions enabled</li>
+                  <li>+25% marketing ROI</li>
+                  <li>20+ analytics products · 47% faster decisions</li>
+                  <li>NT$5–10M monthly transactions enabled</li>
                 </ul>
               </div>
             </article>
@@ -331,12 +381,13 @@
               </div>
               <div class="timeline-detail">
                 <p>
-                  Applied logistic regression to discover industry-specific content preferences
-                  and sharpen campaign targeting.
+                  Modeled industry-specific content preferences with logistic regression, and
+                  partnered with Deloitte on a Salesforce CRM implementation and analytical
+                  dashboards.
                 </p>
                 <ul>
-                  <li>31% improvement over prior conversion rates</li>
-                  <li>Statistical modeling for audience strategy</li>
+                  <li>+31% conversion vs. prior campaign</li>
+                  <li>67% faster campaign optimization</li>
                 </ul>
               </div>
             </article>
@@ -357,13 +408,13 @@
               </div>
               <div class="timeline-detail">
                 <p>
-                  Built time-series forecasting in Python and Excel, then used root-cause
-                  analysis to improve staffing efficiency and container-tracking reliability.
+                  Forecasted demand with Python and Excel time-series models, and diagnosed
+                  system and crawler failures in container-tracking data.
                 </p>
                 <ul>
                   <li>21% lower personnel costs</li>
-                  <li>98% container-tracking data accuracy</li>
-                  <li>20% less manual processing time</li>
+                  <li>98% tracking data accuracy</li>
+                  <li>20% less manual processing</li>
                 </ul>
               </div>
             </article>
@@ -375,18 +426,21 @@
         <div class="page-shell">
           <div class="work-heading reveal">
             <p class="section-index section-index-light">03 · Selected work</p>
-            <h2 id="work-title">Systems with a reason<br />to <em>exist.</em></h2>
+            <h2 id="work-title" class="mask-heading">
+              <span class="mask-line"><span>Systems with a reason</span></span>
+              <span class="mask-line"><span>to <em>exist.</em></span></span>
+            </h2>
             <p>
-              Selected projects spanning reliable LLM applications, real-time recommendation,
-              and large-scale text intelligence.
+              Selected projects spanning LLM applications, real-time recommendation, distributed
+              graph processing, and large-scale text intelligence.
             </p>
           </div>
 
           <div class="project-list">
             <article class="project-card reveal">
-              <div class="project-visual visual-sql" aria-hidden="true">
+              <div class="project-visual visual-sql" aria-hidden="true" data-tilt>
                 <span class="visual-label">RAG / 01</span>
-                <div class="query-box">Which customers<br />are most likely to…</div>
+                <div class="query-box"><span data-type="Which customers are most likely to respond?"></span><i class="caret"></i></div>
                 <div class="sql-lines">
                   <span></span><span></span><span></span><span></span>
                 </div>
@@ -395,7 +449,7 @@
               <div class="project-copy">
                 <div class="project-topline">
                   <span>01</span>
-                  <span>May 2026 — Ongoing</span>
+                  <span>2026 — Ongoing</span>
                 </div>
                 <h3>Banking Text-to-SQL RAG</h3>
                 <p>
@@ -412,7 +466,7 @@
             </article>
 
             <article class="project-card project-card-reverse reveal">
-              <div class="project-visual visual-stream" aria-hidden="true">
+              <div class="project-visual visual-stream" aria-hidden="true" data-tilt>
                 <span class="visual-label">ML SYSTEM / 02</span>
                 <div class="stream-grid">
                   <span>API</span><i></i><span>KAFKA</span><i></i><span>MODEL</span>
@@ -427,9 +481,9 @@
                 </div>
                 <h3>Movie Recommendation System</h3>
                 <p>
-                  An end-to-end streaming pipeline and containerized recommendation service,
-                  combining offline model training with online inference, data quality checks,
-                  drift monitoring, and HitRate@K evaluation.
+                  A Kafka-based recommendation pipeline that handled 2,000+ requests in 24 hours,
+                  served by a containerized hybrid inference API under 600 ms—with data-quality
+                  checks, tests, monitoring, drift detection, and offline/online evaluation.
                 </p>
                 <ul class="tag-list" aria-label="Project technologies">
                   <li>Kafka</li>
@@ -441,35 +495,93 @@
             </article>
 
             <article class="project-card reveal">
-              <div class="project-visual visual-text" aria-hidden="true">
-                <span class="visual-label">NLP / 03</span>
-                <div class="topic-cloud">
-                  <span>exhibition</span>
-                  <span>architecture</span>
-                  <span>family</span>
-                  <span>collection</span>
-                  <span>experience</span>
+              <div class="project-visual visual-graph" aria-hidden="true" data-tilt>
+                <span class="visual-label">DISTRIBUTED / 03</span>
+                <svg class="graph-svg" viewBox="0 0 400 300" data-graph></svg>
+                <div class="graph-stats">
+                  <span><strong>1.0M</strong> vertices</span>
+                  <span><strong>564.8M</strong> edges</span>
                 </div>
-                <div class="review-count"><strong>50K+</strong><small>REVIEWS</small></div>
               </div>
               <div class="project-copy">
                 <div class="project-topline">
                   <span>03</span>
-                  <span>Oct 2022 — Jan 2023</span>
+                  <span>Sep 2026</span>
                 </div>
-                <h3>Chimei Museum Review Intelligence</h3>
+                <h3>Iterative Processing with Spark</h3>
                 <p>
-                  A scalable web scraping and NLP pipeline that transformed 50,000+ Google reviews
-                  into interpretable sentiment themes using TF-IDF and LDA topic modeling.
+                  A Scala/Spark PageRank and recommendation pipeline scaled to 1.0M vertices and
+                  564.8M edges, tuning joins, partitioning, and caching across AWS EMR and
+                  Databricks clusters provisioned with Terraform.
                 </p>
                 <ul class="tag-list" aria-label="Project technologies">
-                  <li>Python</li>
-                  <li>TF-IDF</li>
-                  <li>LDA</li>
-                  <li>Sentiment analysis</li>
+                  <li>Scala</li>
+                  <li>Spark</li>
+                  <li>AWS EMR</li>
+                  <li>Databricks</li>
                 </ul>
               </div>
             </article>
+
+            <article class="project-card project-card-reverse reveal">
+              <div class="project-visual visual-cluster" aria-hidden="true" data-tilt>
+                <span class="visual-label">NLP / 04</span>
+                <svg class="cluster-svg" viewBox="0 0 400 300" data-cluster></svg>
+                <div class="cluster-legend">
+                  <span>k-means</span><span>agglomerative</span><span>HDBSCAN</span>
+                </div>
+              </div>
+              <div class="project-copy">
+                <div class="project-topline">
+                  <span>04</span>
+                  <span>Feb 2026</span>
+                </div>
+                <h3>NYC Council Bill Clustering</h3>
+                <p>
+                  TF-IDF representations of 6,393 bills, compared across PCA and UMAP, then nine
+                  clustering pipelines benchmarked to surface interpretable policy themes.
+                </p>
+                <ul class="tag-list" aria-label="Project technologies">
+                  <li>TF-IDF</li>
+                  <li>UMAP</li>
+                  <li>HDBSCAN</li>
+                  <li>Clustering</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+
+          <div class="more-work">
+            <p class="more-label reveal">More projects</p>
+            <div class="mini-grid">
+              <article class="mini-card reveal">
+                <span class="mini-date">Mar 2026</span>
+                <h3>Email Spam Classification</h3>
+                <p>
+                  Vectorized 5,171 imbalanced emails and tuned a k-NN classifier, reaching 0.93
+                  validation weighted F1 while tracking ROC AUC and average precision.
+                </p>
+                <span class="mini-tags">scikit-learn · k-NN</span>
+              </article>
+              <article class="mini-card reveal" style="--rd: 1">
+                <span class="mini-date">Jan 2026</span>
+                <h3>LinkedIn Job Posting Text Analytics</h3>
+                <p>
+                  Built a 5,000-term document matrix from 517 MB of postings and used
+                  probability-ratio analysis to find language tied to $500K+ roles.
+                </p>
+                <span class="mini-tags">Text mining · R / Python</span>
+              </article>
+              <article class="mini-card reveal" style="--rd: 2">
+                <span class="mini-date">Oct 2022 — Jan 2023</span>
+                <h3>Chimei Museum Review Intelligence</h3>
+                <p>
+                  A web-scraping and NLP pipeline over 50K+ Google reviews, extracting five
+                  sentiment themes with TF-IDF and LDA.
+                </p>
+                <span class="mini-tags">NLP · LDA</span>
+              </article>
+            </div>
           </div>
         </div>
       </section>
@@ -478,37 +590,27 @@
         <div class="page-shell">
           <div class="section-heading reveal">
             <p class="section-index">04 · Education</p>
-            <h2 id="education-title">Always in learning mode.</h2>
+            <h2 id="education-title" class="mask-heading">
+              <span class="mask-line"><span>Always in learning mode.</span></span>
+            </h2>
           </div>
 
           <div class="education-grid">
-            <article class="education-card education-card-featured reveal">
+            <article class="education-card education-card-featured reveal" data-tilt>
               <div class="school-logo school-logo-cmu">
-                <img
-                  src="./assets/cmu-logo.png"
-                  alt="Carnegie Mellon University logo"
-                  width="600"
-                  height="600"
-                  loading="lazy"
-                />
+                <img src="./assets/cmu-logo.png" alt="Carnegie Mellon University logo" width="600" height="600" loading="lazy" />
               </div>
               <div>
-                <p class="education-date">2025 — 2026</p>
+                <p class="education-date">Aug 2025 — Dec 2026</p>
                 <h3>Carnegie Mellon University</h3>
                 <p>Master of Information Systems Management</p>
                 <span>Business Intelligence &amp; Data Analytics</span>
               </div>
             </article>
 
-            <article class="education-card reveal">
+            <article class="education-card reveal" style="--rd: 1" data-tilt>
               <div class="school-logo school-logo-scu">
-                <img
-                  src="./assets/scu-logo.png"
-                  alt="Soochow University logo"
-                  width="143"
-                  height="141"
-                  loading="lazy"
-                />
+                <img src="./assets/scu-logo.png" alt="Soochow University logo" width="143" height="141" loading="lazy" />
               </div>
               <div>
                 <p class="education-date">2019 — 2023</p>
@@ -525,6 +627,13 @@
       </section>
 
       <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div class="contact-marquee" aria-hidden="true">
+          <div class="contact-marquee-track">
+            <span>Let’s build something useful</span><span>✺</span>
+            <span>Let’s build something useful</span><span>✺</span>
+            <span>Let’s build something useful</span><span>✺</span>
+          </div>
+        </div>
         <div class="contact-grid page-shell">
           <div class="contact-copy reveal">
             <p class="section-index section-index-light">05 · Contact</p>
@@ -541,6 +650,7 @@
             </a>
             <div class="contact-links">
               <a href="https://www.linkedin.com/in/hsing-yu-wen/">LinkedIn ↗</a>
+              <a href="https://github.com/Winnie961055">GitHub ↗</a>
               <a href="./assets/resume-hsing-yu-wen.pdf" target="_blank">Résumé ↗</a>
             </div>
           </div>
