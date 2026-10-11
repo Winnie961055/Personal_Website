@@ -517,66 +517,197 @@ svg {
 }
 
 .impact-strip {
-  border-top: 1px solid var(--ink);
-  background: var(--paper);
+  position: relative;
+  background: var(--ink);
+  color: var(--paper);
+  overflow: hidden;
 }
 
-.impact-label {
-  min-height: 48px;
-  display: flex;
-  align-items: center;
-  padding: 0 42px;
-  border-right: 1px solid var(--line);
-  border-left: 1px solid var(--line);
+.impact-strip::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(600px 220px at 12% 0%, rgba(184, 55, 37, 0.28), transparent 70%);
+}
+
+.impact-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  gap: 56px;
+  padding: 64px 0 68px;
+  align-items: start;
 }
 
 .impact-label h2 {
+  margin: 0 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--cream-deep);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.impact-label h2::before {
+  content: "";
+  width: 22px;
+  height: 2px;
+  background: var(--red);
+}
+
+.impact-label p {
   margin: 0;
-  color: var(--muted);
+  color: rgba(255, 250, 240, 0.62);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.impact-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 4px 26px 6px;
+  border-left: 1px solid var(--line-light);
+}
+
+.impact-item::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--red);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.impact-item:hover::before {
+  transform: scaleY(1);
+}
+
+.impact-source {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 250, 240, 0.5);
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
-.impact-label span {
-  margin-right: 0.8em;
-  color: var(--red);
-}
-
-.impact-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border-top: 1px solid var(--line);
-}
-
-.impact-item {
-  min-height: 158px;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
-  align-content: center;
-  padding: 30px 32px;
-  border-left: 1px solid var(--line);
-}
-
-.impact-item:last-child {
-  border-right: 1px solid var(--line);
+.impact-source::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--red);
 }
 
 .impact-item strong {
-  color: var(--red);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 44px;
+  display: flex;
+  align-items: baseline;
+  color: var(--paper);
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: clamp(38px, 3.6vw, 54px);
   line-height: 1;
-  font-weight: 500;
-  letter-spacing: -0.04em;
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  font-variant-numeric: lining-nums tabular-nums;
+  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.impact-item span {
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.45;
+.impact-item strong em {
+  margin-left: 2px;
+  color: var(--cream-deep);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.72em;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.impact-item:hover strong {
+  transform: translateX(6px);
+}
+
+.impact-desc {
+  max-width: 220px;
+  color: rgba(255, 250, 240, 0.62);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+@media (max-width: 1080px) {
+  .impact-inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .impact-label {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .impact-label h2 {
+    margin: 0;
+  }
+}
+
+@media (max-width: 860px) {
+  .impact-grid {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 36px;
+  }
+
+  .impact-item {
+    padding: 2px 20px 4px;
+  }
+}
+
+@media (max-width: 560px) {
+  .impact-inner {
+    padding: 48px 0 52px;
+  }
+
+  .impact-label {
+    display: block;
+  }
+
+  .impact-label h2 {
+    margin-bottom: 12px;
+  }
+
+  .impact-label p {
+    font-size: 17px;
+  }
+
+  .impact-item {
+    padding: 0 14px;
+  }
+
+  .impact-item strong {
+    font-size: 36px;
+  }
+
+  .impact-desc {
+    font-size: 12px;
+  }
 }
 
 .section-heading {
@@ -1378,11 +1509,6 @@ svg {
     font-size: clamp(58px, 7vw, 78px);
   }
 
-  .impact-item {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-
   .about-grid {
     gap: 70px;
   }
@@ -1495,19 +1621,6 @@ svg {
 
   .system-map {
     height: 410px;
-  }
-
-  .impact-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .impact-item {
-    min-height: 130px;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .impact-item:nth-child(2n) {
-    border-right: 1px solid var(--line);
   }
 
   .about-grid {
@@ -1654,19 +1767,6 @@ svg {
 
   .frame-caption strong {
     font-size: 13px;
-  }
-
-  .impact-item {
-    padding: 22px 18px;
-  }
-
-  .impact-label {
-    min-height: 44px;
-    padding: 0 22px;
-  }
-
-  .impact-item strong {
-    font-size: 35px;
   }
 
   .section-heading {
@@ -2195,38 +2295,6 @@ body.is-ready .split-word > span {
   100% {
     transform: translateY(100%);
   }
-}
-
-/* impact counters */
-.impact-item strong {
-  font-variant-numeric: tabular-nums;
-}
-
-.impact-item {
-  position: relative;
-  overflow: hidden;
-  transition: background-color 300ms ease;
-}
-
-.impact-item::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 3px;
-  background: var(--red);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.impact-item:hover {
-  background: var(--paper-warm);
-}
-
-.impact-item:hover::after {
-  transform: scaleX(1);
 }
 
 /* ---------- Scroll progress + header ---------- */
@@ -2969,12 +3037,6 @@ html:not(.js) .mask-line > span {
 }
 
 /* responsive for new pieces */
-@media (max-width: 1080px) {
-  .impact-item strong {
-    font-size: 38px;
-  }
-}
-
 @media (max-width: 860px) {
   .mini-grid {
     grid-template-columns: 1fr;

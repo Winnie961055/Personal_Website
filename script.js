@@ -274,7 +274,7 @@ if (finePointer && !prefersReducedMotion) {
   document.addEventListener("pointerover", (e) => {
     const labelled = e.target.closest("[data-cursor]");
     const hoverable = e.target.closest("a, button, .marquee-track span, .mini-card, .impact-item");
-    const dark = e.target.closest(".work, .contact, .site-footer, .loader");
+    const dark = e.target.closest(".work, .contact, .site-footer, .loader, .impact-strip");
     ring.classList.toggle("is-label", Boolean(labelled));
     ring.classList.toggle("is-hover", Boolean(hoverable) && !labelled);
     ring.classList.toggle("is-dark", Boolean(dark));
