@@ -1583,6 +1583,22 @@ svg {
     transform: translateY(0);
   }
 
+  /* backdrop-filter / transform on the header make it the containing block
+     for the fixed overlay, collapsing the menu to the header's height.
+     Drop both while the menu is open so the overlay covers the viewport. */
+  body.nav-open .site-header {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    transform: none;
+    border-color: transparent;
+  }
+
+  .primary-nav {
+    height: 100vh;
+    height: 100dvh;
+    overflow-y: auto;
+  }
+
   .primary-nav a {
     font-family: Georgia, "Times New Roman", serif;
     font-size: clamp(32px, 8vw, 52px);
