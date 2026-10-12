@@ -2895,6 +2895,134 @@ html:not(.js) .mask-line > span {
   color: var(--paper);
 }
 
+/* storage (heterogeneous DBs) */
+.visual-storage {
+  background: var(--cream);
+  background-image: radial-gradient(rgba(23, 21, 16, 0.12) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+.storage-svg {
+  position: absolute;
+  inset: 6% 5% 4%;
+  width: 90%;
+  height: 90%;
+  overflow: visible;
+}
+
+.st-link {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.3;
+  stroke-dasharray: 4 5;
+  animation: dash-flow 1.1s linear infinite;
+}
+
+.st-db rect {
+  fill: var(--paper);
+  stroke: var(--ink);
+  stroke-width: 1.2;
+}
+
+.st-db text,
+.st-hub text,
+.st-latency text,
+.st-badge text {
+  text-anchor: middle;
+}
+
+.st-name {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  fill: var(--ink);
+}
+
+.st-stat {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  fill: var(--red);
+}
+
+.st-packet {
+  fill: var(--red);
+  stroke: var(--paper);
+  stroke-width: 1.5;
+}
+
+.st-hub rect {
+  fill: var(--ink);
+}
+
+.st-hub text {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  fill: var(--cream);
+}
+
+.st-latency text {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  letter-spacing: -0.03em;
+}
+
+.st-slow {
+  fill: var(--muted);
+  text-decoration: line-through;
+}
+
+.st-arrow {
+  fill: var(--ink);
+  font-size: 22px !important;
+}
+
+.st-fast {
+  fill: var(--red);
+}
+
+.st-badge rect {
+  fill: var(--red);
+}
+
+.st-badge text {
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  fill: var(--paper);
+}
+
+.project-card.is-visible .st-fast,
+.project-card.is-visible .st-badge {
+  animation: cache-hit 2.6s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes cache-hit {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  12% {
+    transform: scale(1.12);
+  }
+  50% {
+    opacity: 0.75;
+  }
+}
+
+/* text logo tile for companies without a logo asset */
+.company-logo-text {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--red);
+}
+
 /* more projects */
 .more-work {
   margin-top: 90px;
@@ -3108,6 +3236,9 @@ html:not(.js) .mask-line > span {
 
   .marquee-row,
   .contact-marquee-track,
+  .st-link,
+  .st-fast,
+  .st-badge,
   .orbit,
   .system-node,
   .hero-visual::before {

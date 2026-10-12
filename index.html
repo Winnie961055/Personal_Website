@@ -16,7 +16,7 @@
     <meta property="og:type" content="website" />
     <title>Hsing-Yu Wen — Data AI Engineer</title>
     <link rel="icon" href="./assets/favicon-winnie.png?v=6" type="image/png" />
-    <link rel="stylesheet" href="./styles.css?v=e344d35" />
+    <link rel="stylesheet" href="./styles.css?v=20261012" />
     <script>
       document.documentElement.classList.add("js");
     </script>
@@ -292,7 +292,7 @@
           </div>
           <div class="marquee-row marquee-row-reverse">
             <div class="marquee-track">
-              <span>Spark</span><span>Kafka</span><span>Airflow</span><span>Docker</span>
+              <span>Spark</span><span>Kafka</span><span>Airflow</span><span>Docker</span><span>Neo4j</span><span>MySQL</span><span>Azure</span><span>Ansible</span>
               <span>Kubernetes</span><span>Terraform</span><span>AWS</span><span>Databricks</span>
               <span>Power BI</span><span>Tableau</span><span>MongoDB</span><span>Git</span>
             </div>
@@ -314,6 +314,33 @@
 
           <div class="timeline" data-timeline>
             <div class="timeline-rail" aria-hidden="true"><span data-timeline-fill></span></div>
+
+            <article class="timeline-item reveal">
+              <div class="timeline-meta">
+                <span class="timeline-year">Sep 2026–Present</span>
+                <span>Pittsburgh, PA</span>
+              </div>
+              <div class="timeline-role">
+                <span class="company-logo company-logo-text" aria-hidden="true">SFT</span>
+                <div>
+                  <h3>Forward-Deployed Engineer</h3>
+                  <p>Sustainable Future Tech · CMU Capstone</p>
+                </div>
+              </div>
+              <div class="timeline-detail">
+                <p>
+                  Embedded with the client to build schema-bound LLM detection and
+                  action-proposal agents for an AI-driven security workflow, integrated with
+                  their AI Governance Control Plane so containment actions run only after
+                  runtime authorization.
+                </p>
+                <ul>
+                  <li>LLM agents · JSON Schema validation</li>
+                  <li>AGCP v2 REST integration</li>
+                  <li>Replayable governance experiments</li>
+                </ul>
+              </div>
+            </article>
 
             <article class="timeline-item reveal">
               <div class="timeline-meta">
@@ -438,8 +465,8 @@
               <span class="mask-line"><span>to <em>exist.</em></span></span>
             </h2>
             <p>
-              Selected projects spanning LLM applications, real-time recommendation, distributed
-              graph processing, and large-scale text intelligence.
+              Selected projects spanning LLM applications, heterogeneous cloud storage,
+              real-time recommendation, and distributed graph processing.
             </p>
           </div>
 
@@ -473,8 +500,51 @@
             </article>
 
             <article class="project-card project-card-reverse reveal">
+              <div class="project-visual visual-storage" aria-hidden="true" data-tilt>
+                <span class="visual-label">CLOUD STORAGE / 02</span>
+                <svg class="storage-svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet">
+                  <path id="st-a" class="st-link" d="M69 116 C69 150 170 150 185 176" />
+                  <path id="st-b" class="st-link" d="M200 116 L200 176" />
+                  <path id="st-c" class="st-link" d="M331 116 C331 150 230 150 215 176" />
+                  <g class="st-db"><rect x="12" y="60" width="114" height="56" rx="6" /><text x="69" y="84" class="st-name">MySQL</text><text x="69" y="102" class="st-stat">2.6M users</text></g>
+                  <g class="st-db"><rect x="143" y="60" width="114" height="56" rx="6" /><text x="200" y="84" class="st-name">Neo4j</text><text x="200" y="102" class="st-stat">follow graph</text></g>
+                  <g class="st-db"><rect x="274" y="60" width="114" height="56" rx="6" /><text x="331" y="84" class="st-name">MongoDB</text><text x="331" y="102" class="st-stat">37.6M comments</text></g>
+                  <circle class="st-packet" r="4"><animateMotion dur="1.8s" repeatCount="indefinite"><mpath href="#st-a" /></animateMotion></circle>
+                  <circle class="st-packet" r="4"><animateMotion dur="1.8s" begin="0.6s" repeatCount="indefinite"><mpath href="#st-b" /></animateMotion></circle>
+                  <circle class="st-packet" r="4"><animateMotion dur="1.8s" begin="1.2s" repeatCount="indefinite"><mpath href="#st-c" /></animateMotion></circle>
+                  <g class="st-hub"><rect x="120" y="176" width="160" height="44" rx="22" /><text x="200" y="203">TIMELINE API</text></g>
+                  <g class="st-latency">
+                    <text x="128" y="254" class="st-slow">8.28 s</text>
+                    <text x="200" y="254" class="st-arrow">→</text>
+                    <text x="272" y="254" class="st-fast">4 ms</text>
+                  </g>
+                  <g class="st-badge"><rect x="160" y="270" width="80" height="18" rx="9" /><text x="200" y="283">CACHE HIT</text></g>
+                </svg>
+              </div>
+              <div class="project-copy">
+                <div class="project-topline">
+                  <span>02</span>
+                  <span>Oct 2026</span>
+                </div>
+                <h3>Heterogeneous Cloud Storage</h3>
+                <p>
+                  A Java backend for a social-network timeline that fans out across MySQL, Neo4j,
+                  and MongoDB on Azure—2.6M users and 37.6M comments (~10 GB) served through
+                  compound indexes, selective caching that cut top-user latency from 8.28 s to
+                  4 ms, and retries tuned from failure logs to survive injected database faults.
+                </p>
+                <ul class="tag-list" aria-label="Project technologies">
+                  <li>Java</li>
+                  <li>MySQL · Neo4j · MongoDB</li>
+                  <li>Azure</li>
+                  <li>Terraform · Ansible</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="project-card reveal">
               <div class="project-visual visual-stream" aria-hidden="true" data-tilt>
-                <span class="visual-label">ML SYSTEM / 02</span>
+                <span class="visual-label">ML SYSTEM / 03</span>
                 <div class="stream-grid">
                   <span>API</span><i></i><span>KAFKA</span><i></i><span>MODEL</span>
                 </div>
@@ -483,7 +553,7 @@
               </div>
               <div class="project-copy">
                 <div class="project-topline">
-                  <span>02</span>
+                  <span>03</span>
                   <span>Jan — Apr 2026</span>
                 </div>
                 <h3>Movie Recommendation System</h3>
@@ -501,9 +571,9 @@
               </div>
             </article>
 
-            <article class="project-card reveal">
+            <article class="project-card project-card-reverse reveal">
               <div class="project-visual visual-graph" aria-hidden="true" data-tilt>
-                <span class="visual-label">DISTRIBUTED / 03</span>
+                <span class="visual-label">DISTRIBUTED / 04</span>
                 <svg class="graph-svg" viewBox="0 0 400 300" data-graph></svg>
                 <div class="graph-stats">
                   <span><strong>1.0M</strong> vertices</span>
@@ -512,7 +582,7 @@
               </div>
               <div class="project-copy">
                 <div class="project-topline">
-                  <span>03</span>
+                  <span>04</span>
                   <span>Sep 2026</span>
                 </div>
                 <h3>Iterative Processing with Spark</h3>
@@ -529,46 +599,19 @@
                 </ul>
               </div>
             </article>
-
-            <article class="project-card project-card-reverse reveal">
-              <div class="project-visual visual-cluster" aria-hidden="true" data-tilt>
-                <span class="visual-label">NLP / 04</span>
-                <svg class="cluster-svg" viewBox="0 0 400 300" data-cluster></svg>
-                <div class="cluster-legend">
-                  <span>k-means</span><span>agglomerative</span><span>HDBSCAN</span>
-                </div>
-              </div>
-              <div class="project-copy">
-                <div class="project-topline">
-                  <span>04</span>
-                  <span>Feb 2026</span>
-                </div>
-                <h3>NYC Council Bill Clustering</h3>
-                <p>
-                  TF-IDF representations of 6,393 bills, compared across PCA and UMAP, then nine
-                  clustering pipelines benchmarked to surface interpretable policy themes.
-                </p>
-                <ul class="tag-list" aria-label="Project technologies">
-                  <li>TF-IDF</li>
-                  <li>UMAP</li>
-                  <li>HDBSCAN</li>
-                  <li>Clustering</li>
-                </ul>
-              </div>
-            </article>
           </div>
 
           <div class="more-work">
             <p class="more-label reveal">More projects</p>
             <div class="mini-grid">
               <article class="mini-card reveal">
-                <span class="mini-date">Mar 2026</span>
-                <h3>Email Spam Classification</h3>
+                <span class="mini-date">Feb 2026</span>
+                <h3>NYC Council Bill Clustering</h3>
                 <p>
-                  Vectorized 5,171 imbalanced emails and tuned a k-NN classifier, reaching 0.93
-                  validation weighted F1 while tracking ROC AUC and average precision.
+                  TF-IDF representations of 6,393 bills compared across PCA and UMAP, with nine
+                  clustering pipelines benchmarked to surface interpretable policy themes.
                 </p>
-                <span class="mini-tags">scikit-learn · k-NN</span>
+                <span class="mini-tags">TF-IDF · UMAP · HDBSCAN</span>
               </article>
               <article class="mini-card reveal" style="--rd: 1">
                 <span class="mini-date">Jan 2026</span>
@@ -676,6 +719,6 @@
       </div>
     </footer>
 
-    <script src="./script.js?v=e344d35"></script>
+    <script src="./script.js?v=20261012"></script>
   </body>
 </html>
